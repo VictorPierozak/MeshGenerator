@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="com.example.projekt_geo.MainController">
+
+    <center>
+    <Canvas fx:id="mainCanvas" height="600" width="600" />
+    </center>
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+            <Label fx:id="meshLabel" prefHeight="18.0" prefWidth="85.0" text="Mesh" />
+            <ChoiceBox fx:id="meshOptions" prefHeight="26.0" prefWidth="162.0" />
+            <Label prefHeight="18.0" prefWidth="46.0" text="Phase W" />
+            <TextField fx:id="phaseOneFrac" prefHeight="26.0" prefWidth="55.0" />
+            <Label prefHeight="18.0" prefWidth="50.0" text="Phase B" />
+            <TextField fx:id="phaseTwoFrac" prefHeight="26.0" prefWidth="66.0" />
+            <Label prefHeight="18.0" prefWidth="84.0" text="Image path" />
+            <TextField fx:id="imagePathField" prefHeight="26.0" prefWidth="206.0" />
+          <Button fx:id="loadButton" mnemonicParsing="false" text="Load" onAction="#loadButtonClick" />
+        </items>
+      </ToolBar>
+   </top>
+    <bottom>
+        <ToolBar>
+            <TextField fx:id="meshFilePath" />
+            <Button fx:id="loadMeshButton" text="Load mesh from file" onAction="#loadMeshClick"/>
+            <Button fx:id="saveMeshButton" text="Save mesh to file" onAction="#saveMeshClick"/>
+            <Label text=" Advanced options " />
+            <ChoiceBox fx:id="advancedOptions"/>
+            <TextField fx:id="advancedField" prefWidth="100"/>
+            <Button fx:id="advancedApply" onAction="#advancedApplyClick" text="Apply"/>
+        </ToolBar>
+    </bottom>
+
+</BorderPane>
